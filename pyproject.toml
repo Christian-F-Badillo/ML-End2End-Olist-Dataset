@@ -1,0 +1,35 @@
+[project]
+name = "customer-segmentation-survival-pipeline"
+version = "0.1.0"
+description = "Pipeline end-to-end de segmentación (UMAP+HDBSCAN) y supervivencia (XGBoost/Lifelines)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dash>=4.4.0",
+    "duckdb>=1.5.4",
+    "fastapi>=0.139.2",
+    "hdbscan>=0.8.44",
+    "jinja2>=3.1.6",
+    "joblib>=1.5.3",
+    "kagglehub>=1.0.2",
+    "lifelines>=0.30.3",
+    "numba>=0.66.0",
+    "numpy>=2.4.6",
+    "plotly>=6.9.0",
+    "polars>=1.42.1",
+    "pydantic>=2.13.4",
+    "scikit-learn>=1.9.0",
+    "scikit-survival>=0.28.0",
+    "umap-learn>=0.5.12",
+    "uvicorn[standard]>=0.51.0",
+    "xgboost>=3.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "jupyterlab>=4.6.1",
+    "pytest>=9.1.1",
+    "ruff>=0.15.22",
+    "sqlfluff>=4.2.2",
+]
