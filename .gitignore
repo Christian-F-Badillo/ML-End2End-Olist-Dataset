@@ -5,6 +5,18 @@ build/
 dist/
 wheels/
 *.egg-info
+.ipynb_checkpoints/
 
 # Virtual environments
 .venv
+
+#configs
+pyrightconfig.json
+.sqlfluff
+
+#exploratory notebooks
+*.ipynb
+
+# env vars
+.env
+config.toml
