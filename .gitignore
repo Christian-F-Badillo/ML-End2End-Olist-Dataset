@@ -14,9 +14,6 @@ wheels/
 pyrightconfig.json
 .sqlfluff
 
-#exploratory notebooks
-*.ipynb
-
 # env vars
 .env
 config.toml
