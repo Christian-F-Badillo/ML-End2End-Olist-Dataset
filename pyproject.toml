@@ -4,32 +4,77 @@ version = "0.1.0"
 description = "Pipeline end-to-end de segmentación (UMAP+HDBSCAN) y supervivencia (XGBoost/Lifelines)"
 readme = "README.md"
 requires-python = ">=3.12"
+
 dependencies = [
-    "dash>=4.4.0",
-    "duckdb>=1.5.4",
-    "fastapi>=0.139.2",
-    "hdbscan>=0.8.44",
-    "jinja2>=3.1.6",
+    "polars>=1.42.1",
+    "pyarrow>=25.0.0",
+    "numpy>=2.4.6",
+    "pydantic>=2.13.4",
+    "psycopg[binary]>=3.3.4",
+    "connectorx>=0.4.5",
     "joblib>=1.5.3",
     "kagglehub>=1.0.2",
-    "lifelines>=0.30.3",
-    "numba>=0.66.0",
-    "numpy>=2.4.6",
-    "plotly>=6.9.0",
-    "polars>=1.42.1",
-    "pydantic>=2.13.4",
+]
+
+[project.optional-dependencies]
+train = [
     "scikit-learn>=1.9.0",
     "scikit-survival>=0.28.0",
-    "umap-learn>=0.5.12",
-    "uvicorn[standard]>=0.51.0",
+    "lifelines>=0.30.3",
     "xgboost>=3.3.0",
+    "umap-learn>=0.5.12",
+    "hdbscan>=0.8.44",
+    "numba>=0.66.0",
+    "missingno>=0.5.2",
+    "mlflow>=1.27.0",
+]
+
+dashboard = [
+    "dash>=4.4.0",
+    "plotly>=6.9.0",
+    "fastapi>=0.139.2",
+    "uvicorn[standard]>=0.51.0",
+    "jinja2>=3.1.6",
+    "mlflow-skinny>=2.10.0",
+]
+
+all = [
+    "customer-segmentation-survival-pipeline[train,dashboard]",
 ]
 
 [dependency-groups]
 dev = [
     "httpx>=0.28.1",
     "jupyterlab>=4.6.1",
+    "missingno>=0.5.2",
     "pytest>=9.1.1",
     "ruff>=0.15.22",
+    "scikit-learn>=1.9.0",
     "sqlfluff>=4.2.2",
+]
+
+train = [
+    "scikit-learn>=1.9.0",
+    "scikit-survival>=0.28.0",
+    "lifelines>=0.30.3",
+    "xgboost>=3.3.0",
+    "umap-learn>=0.5.12",
+    "hdbscan>=0.8.44",
+    "numba>=0.66.0",
+    "missingno>=0.5.2",
+    "mlflow>=1.27.0",
+]
+
+dashboard = [
+    "dash>=4.4.0",
+    "plotly>=6.9.0",
+    "fastapi>=0.139.2",
+    "uvicorn[standard]>=0.51.0",
+    "jinja2>=3.1.6",
+    "mlflow-skinny>=2.10.0",
+    "matplotlib>=3.11.1",
+]
+
+all = [
+    "customer-segmentation-survival-pipeline[train,dashboard]",
 ]
